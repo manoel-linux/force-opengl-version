@@ -68,7 +68,7 @@
 
 # Other Projects
 
-- DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps   format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the  following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages. It is based on the xdeb.
+- DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps   format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the  following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages It is based on the xdeb.
 
 - way-display-guard is a tool that can resolve a display:0 issue when attempting to run a program as a superuser or using "sudo." Remember to execute the way-display-guard every time you shut down or restart your PC. You can find the source code and more information about way-display-guard in the following repository: https://github.com/manoel-linux/way-display-guard
 
