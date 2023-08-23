@@ -1,0 +1,781 @@
+#!/bin/bash
+
+clear
+
+show_main_menu() {
+while true; do
+clear
+echo "#################################################################"
+echo "(force-opengl-version-with-es-compat-profile) >> (aug 2023)"
+echo "#################################################################"
+echo "  ██████  ██████  ███████ ███    ██  ██████  ██      "
+echo " ██    ██ ██   ██ ██      ████   ██ ██       ██      "
+echo " ██    ██ ██████  █████   ██ ██  ██ ██   ███ ██      "
+echo " ██    ██ ██      ██      ██  ██ ██ ██    ██ ██      "
+echo "  ██████  ██      ███████ ██   ████  ██████  ███████ " 
+echo "#################################################################"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+echo "(build-latest) >> (0.0.1)"
+echo "(force-opengl-version-with-es-compat-profile-github) >> (https://github.com/manoel-linux/force-opengl-version)"
+echo "#################################################################"
+echo "(NOTE) >> (Some programs may have issues, and some may function without any problems)"
+echo "#################################################################"
+
+if [[ $EUID -eq 0 ]]; then
+echo " ███████ ██████  ██████   ██████  ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██ ██ "
+echo " █████   ██████  ██████  ██    ██ ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██    "
+echo " ███████ ██   ██ ██   ██  ██████  ██   ██ ██ "                                                                                        
+echo "#################################################################"
+echo "(This script should not be executed as a superuser or sudo)"
+echo "(Please run it without superuser privileges or sudo)"
+echo "#################################################################"
+exit 1
+fi
+
+echo "(1)> (Force) >> (the OpenGL-compat-profile version 4.6 with OpenGL-ES 3.2)"
+echo "(2)> (Force) >> (the OpenGL-compat-profile version 4.6 with OpenGL-ES 3.1)"
+echo "(3)> (Force) >> (the OpenGL-compat-profile version 4.6 with OpenGL-ES 3.0)"
+echo "(4)> (Force) >> (the OpenGL-compat-profile version 4.5 with OpenGL-ES 3.2)"
+echo "(5)> (Force) >> (the OpenGL-compat-profile version 4.5 with OpenGL-ES 3.1)"
+echo "(6)> (Force) >> (the OpenGL-compat-profile version 4.5 with OpenGL-ES 3.0)"
+echo "(7)> (Force) >> (the OpenGL-compat-profile version 4.4 with OpenGL-ES 3.2)"
+echo "(8)> (Force) >> (the OpenGL-compat-profile version 4.4 with OpenGL-ES 3.1)"
+echo "(9)> (Force) >> (the OpenGL-compat-profile version 4.4 with OpenGL-ES 3.0)"
+echo "(10)> (Force) >> (the OpenGL-compat-profile version 4.3 with OpenGL-ES 3.2)"
+echo "(11)> (Force) >> (the OpenGL-compat-profile version 4.3 with OpenGL-ES 3.1)"
+echo "(12)> (Force) >> (the OpenGL-compat-profile version 4.3 with OpenGL-ES 3.0)"
+echo "(13)> (Force) >> (the OpenGL-compat-profile version 4.2 with OpenGL-ES 3.2)"
+echo "(14)> (Force) >> (the OpenGL-compat-profile version 4.2 with OpenGL-ES 3.1)"
+echo "(15)> (Force) >> (the OpenGL-compat-profile version 4.2 with OpenGL-ES 3.0)"
+echo "(16)> (Force) >> (the OpenGL-compat-profile version 4.1 with OpenGL-ES 3.2)"
+echo "(17)> (Force) >> (the OpenGL-compat-profile version 4.1 with OpenGL-ES 3.1)"
+echo "(18)> (Force) >> (the OpenGL-compat-profile version 4.1 with OpenGL-ES 3.0)"
+echo "(19)> (Force) >> (the OpenGL-compat-profile version 4.0 with OpenGL-ES 3.2)"
+echo "(20)> (Force) >> (the OpenGL-compat-profile version 4.0 with OpenGL-ES 3.1)"
+echo "(21)> (Force) >> (the OpenGL-compat-profile version 4.0 with OpenGL-ES 3.0)"
+echo "(22)> (Force) >> (the OpenGL-compat-profile version 3.3 with OpenGL-ES 3.2)"
+echo "(23)> (Force) >> (the OpenGL-compat-profile version 3.3 with OpenGL-ES 3.1)"
+echo "(24)> (Force) >> (the OpenGL-compat-profile version 3.3 with OpenGL-ES 3.0)"
+echo "(25)> (Force) >> (the OpenGL-compat-profile version 3.2 with OpenGL-ES 3.2)"
+echo "(26)> (Force) >> (the OpenGL-compat-profile version 3.2 with OpenGL-ES 3.1)"
+echo "(27)> (Force) >> (the OpenGL-compat-profile version 3.2 with OpenGL-ES 3.0)"
+echo "(28)> (Force) >> (the OpenGL-compat-profile version 3.1 with OpenGL-ES 3.2)"
+echo "(29)> (Force) >> (the OpenGL-compat-profile version 3.1 with OpenGL-ES 3.1)"
+echo "(30)> (Force) >> (the OpenGL-compat-profile version 3.1 with OpenGL-ES 3.0)"
+echo "(31)> (Force) >> (the OpenGL-compat-profile version 3.0 with OpenGL-ES 3.2)"
+echo "(32)> (Force) >> (the OpenGL-compat-profile version 3.0 with OpenGL-ES 3.1)"
+echo "(33)> (Force) >> (the OpenGL-compat-profile version 3.0 with OpenGL-ES 3.0)"
+echo "(34)> (Exit)"
+echo "#################################################################"
+
+read -p "(Enter your choice) >> " choice
+echo "#################################################################"
+
+case $choice in
+1)
+show_opengl_4_6_es_3_2
+;;
+2)
+show_opengl_4_6_es_3_1
+;;
+3)
+show_opengl_4_6_es_3_0
+;;
+4)
+show_opengl_4_5_es_3_2
+;;
+5)
+show_opengl_4_5_es_3_1
+;;
+6)
+show_opengl_4_5_es_3_0
+;;
+7)
+show_opengl_4_4_es_3_2
+;;
+8)
+show_opengl_4_4_es_3_1
+;;
+9)
+show_opengl_4_4_es_3_0
+;;
+10)
+show_opengl_4_3_es_3_2
+;;
+11)
+show_opengl_4_3_es_3_1
+;;
+12)
+show_opengl_4_3_es_3_0
+;;
+13)
+show_opengl_4_2_es_3_2
+;;
+14)
+show_opengl_4_2_es_3_1
+;;
+15)
+show_opengl_4_2_es_3_0
+;;
+16)
+show_opengl_4_1_es_3_2
+;;
+17)
+show_opengl_4_1_es_3_1
+;;
+18)
+show_opengl_4_1_es_3_0
+;;
+19)
+show_opengl_4_0_es_3_2
+;;
+20)
+show_opengl_4_0_es_3_1
+;;
+21)
+show_opengl_4_0_es_3_0
+;;
+22)
+show_opengl_3_3_es_3_2
+;;
+23)
+show_opengl_3_3_es_3_1
+;;
+24)
+show_opengl_3_3_es_3_0
+;;
+25)
+show_opengl_3_2_es_3_2
+;;
+26)
+show_opengl_3_2_es_3_1
+;;
+27)
+show_opengl_3_2_es_3_0
+;;
+28)
+show_opengl_3_1_es_3_2
+;;
+29)
+show_opengl_3_1_es_3_1
+;;
+30)
+show_opengl_3_1_es_3_0
+;;
+31)
+show_opengl_3_0_es_3_2
+;;
+32)
+show_opengl_3_0_es_3_1
+;;
+33)
+show_opengl_3_0_es_3_0
+;;
+34)
+exit 0
+;;
+*)
+echo "(Invalid choice. Please try again)"
+echo "#################################################################"
+sleep 2
+;;
+esac
+done
+}
+
+show_opengl_4_6_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.6COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=460
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_6_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.6COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=460
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_6_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.6COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=460
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_5_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=450
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_5_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=450
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_5_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=450
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_4_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.4COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=440
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_4_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.4COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=440
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_4_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.4COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=440
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_3_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=430
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_3_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=430
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_3_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=430
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_2_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=420
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_2_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=420
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_2_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=420
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_1_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=410
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_1_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=410
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_1_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=410
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_0_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=400
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_0_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=400
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_0_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=4.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=400
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_3_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=330
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_3_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=330
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_3_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.3COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=330
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_2_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=150
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_2_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=150
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_2_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=150
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_1_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=140
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_1_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=140
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_1_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=140
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_0_es_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.2COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=130
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_0_es_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.1COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=130
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_0_es_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the program to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GLES_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GL_VERSION_OVERRIDE=3.0COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=130
+$program_name &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_main_menu

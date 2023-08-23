@@ -1,0 +1,286 @@
+#!/bin/bash
+
+clear
+
+show_main_menu() {
+while true; do
+clear
+echo "#################################################################"
+echo "(force-opengl-version-for-openjdk) >> (aug 2023)"
+echo "#################################################################"
+echo "  ██████  ██████  ███████ ███    ██  ██████  ██      "
+echo " ██    ██ ██   ██ ██      ████   ██ ██       ██      "
+echo " ██    ██ ██████  █████   ██ ██  ██ ██   ███ ██      "
+echo " ██    ██ ██      ██      ██  ██ ██ ██    ██ ██      "
+echo "  ██████  ██      ███████ ██   ████  ██████  ███████ " 
+echo "#################################################################"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+echo "(build-latest) >> (0.0.1)"
+echo "(force-opengl-version-for-openjdk-github) >> (https://github.com/manoel-linux/force-opengl-version)"
+echo "#################################################################"
+echo "(NOTE) >> (Some .jar may have issues, and some may function without any problems)"
+echo "#################################################################"
+
+if [[ $EUID -eq 0 ]]; then
+echo " ███████ ██████  ██████   ██████  ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██ ██ "
+echo " █████   ██████  ██████  ██    ██ ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██    "
+echo " ███████ ██   ██ ██   ██  ██████  ██   ██ ██ "                                                                                        
+echo "#################################################################"
+echo "(This script should not be executed as a superuser or sudo)"
+echo "(Please run it without superuser privileges or sudo)"
+echo "#################################################################"
+exit 1
+fi
+
+echo "(1)> (Force) >> (the OpenGL version 4.6 for OpenJDK)"
+echo "(2)> (Force) >> (the OpenGL version 4.5 for OpenJDK)"
+echo "(3)> (Force) >> (the OpenGL version 4.4 for OpenJDK)"
+echo "(4)> (Force) >> (the OpenGL version 4.3 for OpenJDK)"
+echo "(5)> (Force) >> (the OpenGL version 4.2 for OpenJDK)"
+echo "(6)> (Force) >> (the OpenGL version 4.1 for OpenJDK)"
+echo "(7)> (Force) >> (the OpenGL version 4.0 for OpenJDK)"
+echo "(8)> (Force) >> (the OpenGL version 3.3 for OpenJDK)"
+echo "(9)> (Force) >> (the OpenGL version 3.2 for OpenJDK)"
+echo "(10)> (Force) >> (the OpenGL version 3.1 for OpenJDK)"
+echo "(11)> (Force) >> (the OpenGL version 3.0 for OpenJDK)"
+echo "(12)> (Exit)"
+echo "#################################################################"
+
+read -p "(Enter your choice) >> " choice
+echo "#################################################################"
+
+case $choice in
+1)
+show_opengl_4_6
+;;
+2)
+show_opengl_4_5
+;;
+3)
+show_opengl_4_4
+;;
+4)
+show_opengl_4_3
+;;
+5)
+show_opengl_4_2
+;;
+6)
+show_opengl_4_1
+;;
+7)
+show_opengl_4_0
+;;
+8)
+show_opengl_3_3
+;;
+9)
+show_opengl_3_2
+;;
+10)
+show_opengl_3_1
+;;
+11)
+show_opengl_3_0
+;;
+12)
+exit 0
+;;
+*)
+echo "(Invalid choice. Please try again)"
+echo "#################################################################"
+sleep 2
+;;
+esac
+done
+}
+
+show_opengl_4_6() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.6
+export MESA_GLSL_VERSION_OVERRIDE=460
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_5() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.5
+export MESA_GLSL_VERSION_OVERRIDE=450
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_4() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.4
+export MESA_GLSL_VERSION_OVERRIDE=440
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_3() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.3
+export MESA_GLSL_VERSION_OVERRIDE=430
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.2
+export MESA_GLSL_VERSION_OVERRIDE=420
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.1
+export MESA_GLSL_VERSION_OVERRIDE=410
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_4_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=4.0
+export MESA_GLSL_VERSION_OVERRIDE=400
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_3() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=3.3
+export MESA_GLSL_VERSION_OVERRIDE=330
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_2() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=3.2
+export MESA_GLSL_VERSION_OVERRIDE=150
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_1() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=3.1
+export MESA_GLSL_VERSION_OVERRIDE=140
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_opengl_3_0() {
+while true; do
+clear
+echo "#################################################################"
+read -p "(Enter the name of the .jar to configure and launch) >> " program_name
+echo "#################################################################"
+export MESA_GL_VERSION_OVERRIDE=3.0
+export MESA_GLSL_VERSION_OVERRIDE=130
+java -jar $program_name.jar &
+exit 1
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_main_menu
