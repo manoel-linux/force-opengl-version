@@ -84,6 +84,8 @@
 
 - The ZRAM-SYSTEMD script streamlines Zram activation and configuration on Linux systems with systemd. It's particularly useful when distributions lack a modern tool for managing Zram effectively. This script provides a straightforward solution for users looking to utilize Zram's benefits. You can find the source code and more information about zram-systemd in the following repository: https://github.com/manoel-linux/zram-systemd
 
+- The opti-systemd is a script for optimizing the systemd boot process on your Linux system. If you're looking for ways to enhance your system's performance, reduce boot times, and improve overall efficiency. You can find the source code and more information about opti-systemd in the following repository: https://github.com/manoel-linux/opti-systemd
+
 # Project Status
 
 - The FORCE-OPENGL-VERSION project is currently in development. The latest stable version is 0.0.1. We aim to provide regular updates and add more features in the future.
